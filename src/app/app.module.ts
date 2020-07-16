@@ -11,12 +11,14 @@ import { CoreModule } from "./core/core.module";
 import { RouterModule } from "@angular/router";
 import { ProductsComponent } from "./shopping/comp/products/products.component";
 import { LoginComponent } from "./core/comp/login/login.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     SharedModule,
+    FormsModule,
     AdminModule,
     ShoppingModule,
     CoreModule,

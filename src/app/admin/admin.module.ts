@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "./../shared/shared.module";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
@@ -10,6 +11,7 @@ import { AdminAuthGuardService } from "./services/admin-auth-guard.service";
 @NgModule({
   imports: [
     SharedModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: "admin/products/new",
