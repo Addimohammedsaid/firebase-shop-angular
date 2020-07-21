@@ -16,6 +16,7 @@ import { ProductFilterComponent } from "./comp/product-filter/product-filter.com
 @NgModule({
   imports: [
     SharedModule,
+    FormsModule,
     RouterModule.forChild([
       { path: "products", component: ProductsComponent },
       { path: "shopping-cart", component: ShippingCartComponent },

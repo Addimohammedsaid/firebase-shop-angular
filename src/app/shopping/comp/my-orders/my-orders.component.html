@@ -1,1 +1,1 @@
-<p>my-orders works!</p>
+<p *ngIf="orders$ | async">{{ orders | json }}</p>

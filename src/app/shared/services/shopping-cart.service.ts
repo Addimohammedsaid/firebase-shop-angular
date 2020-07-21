@@ -1,8 +1,13 @@
+import { Observable } from "rxjs";
+import { ShoppingCart } from "./../models/shopping-cart";
 import { Product } from "./../models/product";
-import { AngularFireDatabase } from "@angular/fire/database";
-import { AngularFireAuth } from "@angular/fire/auth";
+import {
+  AngularFireDatabase,
+  AngularFireList,
+  AngularFireObject,
+} from "@angular/fire/database";
 import { Injectable } from "@angular/core";
-import { take } from "rxjs/internal/operators/take";
+import { take, map } from "rxjs/internal/operators";
 
 @Injectable({
   providedIn: "root",
@@ -16,9 +21,12 @@ export class ShoppingCartService {
     });
   }
 
-  async getCarte() {
+  async getCarte(): Promise<Observable<ShoppingCart>> {
     let carteId = await this.getOrCreateCarteId();
-    return this.db.object("/shopping-cart/" + carteId);
+    return this.db
+      .object("/shopping-cart/" + carteId)
+      .valueChanges()
+      .pipe(map((e) => new ShoppingCart(e["items"])));
   }
 
   private async getOrCreateCarteId(): Promise<String> {
@@ -53,5 +61,12 @@ export class ShoppingCartService {
             (item.payload.exists() ? item.payload.val()["quantity"] : 0) + c,
         });
       });
+  }
+
+  async clearCart() {
+    console.log("remove");
+    let cartId = await this.getOrCreateCarteId();
+    console.log(cartId);
+    this.db.object("/shopping-cart/" + cartId + "/items/").remove();
   }
 }

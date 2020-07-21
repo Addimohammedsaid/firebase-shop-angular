@@ -1,1 +1,22 @@
-<p>shipping-cart-summary works!</p>
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <div class="card-title">Order Summary</div>
+    <p class="card-text">
+      You have {{ cart.totalItemsCount }} items in your shopping cart.
+    </p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let item of cart.items">
+        {{ item.quantity }} x {{ item.title }}
+        <div class="float-right">
+          {{ item.price | currency: "USD":"symbol" }}
+        </div>
+      </li>
+      <li class="list-group-item">
+        Total
+        <div class="float-right font-weight-bold">
+          {{ cart.totalPrice | currency: "USD":"symbol" }}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
