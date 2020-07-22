@@ -1,6 +1,7 @@
 import { ShoppingCartService } from "src/app/shared/services/shopping-cart.service";
-import { AngularFireDatabase } from "@angular/fire/database";
+import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 import { Injectable } from "@angular/core";
+import { Order } from "../models/order";
 
 @Injectable({
   providedIn: "root",
@@ -21,7 +22,7 @@ export class OrderService {
     return this.db.list("/orders");
   }
 
-  getOrdersByUser(userId: string) {
+  getOrdersByUser(userId: string): AngularFireList<any> {
     return this.db.list("/orders/", (ref) => {
       let q = ref.orderByChild("userId").equalTo(userId);
       return q;

@@ -1,25 +1,26 @@
-import { switchMap } from "rxjs/operators";
+import { switchMap, map, take } from "rxjs/operators";
 import { OrderService } from "./../../../shared/services/order.service";
 import { AuthService } from "./../../../shared/services/auth.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 
 @Component({
   selector: "app-my-orders",
   templateUrl: "./my-orders.component.html",
   styleUrls: ["./my-orders.component.css"],
 })
-export class MyOrdersComponent implements OnInit {
+export class MyOrdersComponent implements OnInit, OnDestroy {
   orders$;
 
   constructor(private auth: AuthService, private order: OrderService) {}
 
   ngOnInit() {
-    this.auth.user$.pipe(
-      switchMap((e) => {
-        this.orders$ = this.order.getOrdersByUser(e.uid).valueChanges();
-        console.log(this.orders$);
-        return this.orders$;
-      })
-    );
+    this.auth.user$
+      .pipe(take(1))
+      .subscribe(
+        (item) =>
+          (this.orders$ = this.order.getOrdersByUser(item.uid).valueChanges())
+      );
   }
+
+  ngOnDestroy(): void {}
 }
