@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/']">FireShop</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/shopping/shopping-cart']"
+          >Shopping Cart
+          <span
+            class="badge badge-warning badge-pill"
+            *ngIf="cart$ | async as cart"
+          >
+            {{ cart.totalItemsCount }}
+          </span>
+        </a>
+      </li>
+      <ng-template #anonymUser>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
+      </ng-template>
+      <li class="nav-item dropdown" *ngIf="user; else anonymUser">
+        <a
+          class="nav-link dropdown-toggle"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {{ user.name }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a
+            class="dropdown-item"
+            [routerLink]="['/shopping/my/orders']"
+            routerLinkActive="router-link-active"
+            >My Orders</a
+          >
+          <ng-container *ngIf="user.isAdmin">
+            <a
+              class="dropdown-item"
+              [routerLink]="['/admin/orders']"
+              routerLinkActive="router-link-active"
+              >Manage Orders</a
+            >
+            <a
+              class="dropdown-item"
+              [routerLink]="['/admin/products']"
+              routerLinkActive="router-link-active"
+              >Manage Product</a
+            >
+            <a
+              class="dropdown-item"
+              [routerLink]="['/admin/add/product']"
+              routerLinkActive="router-link-active"
+              >Add Product
+            </a>
+          </ng-container>
+          <a class="dropdown-item" (click)="logout()">Log out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

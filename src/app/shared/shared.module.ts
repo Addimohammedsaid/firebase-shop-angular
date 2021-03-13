@@ -1,28 +1,31 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ProductQunatityComponent } from "./comp/product-qunatity/product-qunatity.component";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFireAuthModule } from "@angular/fire/auth";
-import { ProductCardComponent } from "./comp/product-card/product-card.component";
 import { FormsModule } from "@angular/forms";
 import { DataTableModule } from "angular5-data-table";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
 
 @NgModule({
-  imports: [
+  imports: 
+  [
+    CommonModule,
     FormsModule,
-    DataTableModule,
-    CommonModule,
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    DataTableModule,        
+    AngularFireAuthModule,  
+    AngularFirestoreModule.enablePersistence({synchronizeTabs:true}),    
   ],
-  declarations: [ProductCardComponent, ProductQunatityComponent],
-  exports: [
-    ProductCardComponent,
-    ProductQunatityComponent,
+  declarations: [],
+  exports: 
+  [
     CommonModule,
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    FormsModule,
+    DataTableModule,      
+    AngularFirestoreModule,       
+    AngularFireAuthModule,    
   ],
   providers: [],
 })
+
+
 export class SharedModule {}

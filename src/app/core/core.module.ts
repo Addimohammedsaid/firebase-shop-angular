@@ -1,10 +1,10 @@
-import { FooterComponent } from "./comp/footer/footer.component";
+import { FooterComponent } from "./components/footer/footer.component";
 import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { SharedModule } from "../shared/shared.module";
-import { LoginComponent } from "./comp/login/login.component";
-import { NavBarComponent } from "./comp/nav-bar/nav-bar.component";
+import { LoginComponent } from "./components/login/login.component";
+import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   imports: [SharedModule, RouterModule.forChild([])],
@@ -12,6 +12,7 @@ import { NavBarComponent } from "./comp/nav-bar/nav-bar.component";
     NavBarComponent,    
     LoginComponent,
     FooterComponent,
+    PageNotFoundComponent,
   ],
   exports: [NavBarComponent, FooterComponent],
 })

@@ -1,45 +1,20 @@
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "./../shared/shared.module";
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
-import { DataTableModule } from "angular5-data-table";
-import { ProductFormComponent } from "./comp/product-form/product-form.component";
-import { AdminProductsComponent } from "./comp/admin-products/admin-products.component";
-import { AdminOrdersComponent } from "./comp/admin-orders/admin-orders.component";
-import { AuthGuardService } from "../shared/services/auth-guard.service";
-import { AdminAuthGuardService } from "./services/admin-auth-guard.service";
+import { AdminProductsComponent } from "./components/admin-products/admin-products.component";
+import { AdminOrdersComponent } from "./components/admin-orders/admin-orders.component";
+import { AdminRoutingModule } from "./admin-routing.module";
+import { ProductModule } from "../product/product.model";
 
 @NgModule({
   imports: [
     SharedModule,
-    DataTableModule,
-    FormsModule,
-    RouterModule.forChild([
-      {
-        path: "admin/products/new",
-        component: ProductFormComponent,
-      },
-      {
-        path: "admin/products/:id",
-        component: ProductFormComponent,
-        canActivate: [AdminAuthGuardService],
-      },
-      {
-        path: "admin/products",
-        component: AdminProductsComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService],
-      },
-      {
-        path: "admin/orders",
-        component: AdminOrdersComponent,
-        canActivate: [AuthGuardService],
-      },
-    ]),
+    ProductModule,
+    AdminRoutingModule,        
   ],
   declarations: [
-    ProductFormComponent,
     AdminProductsComponent,
-    AdminOrdersComponent,
+    AdminOrdersComponent,  
   ],
 })
+
 export class AdminModule {}

@@ -17,7 +17,7 @@ export class UserService {
     this.db.collection(this.url).doc(user.uid).set({
       name: user.displayName,
       email: user.email,
-      isAdmin: false,
+      isAdmin: true,
     }, {merge: true});
   }
 
