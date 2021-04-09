@@ -48,3 +48,4 @@ Thumbs.db
 /environments
 environments.prod.ts
 environments.ts
+environments
