@@ -1,0 +1,34 @@
+#hero-section {
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.hero-header {
+  flex: 1;
+}
+
+.hero-thumbnail {
+  flex: 1;
+}
+
+.hero-header .hero-title {
+  text-transform: uppercase;
+}
+
+.hero-header .hero-title span {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.hero-header .hero-body {
+  margin-top: 40px;
+  line-height: 140%;
+  width: clamp(45ch, 50%, 75ch);
+}
+
+.hero-thumbnail img {
+  object-fit: cover;
+  width: 100%;
+}
