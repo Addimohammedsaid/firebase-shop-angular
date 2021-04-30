@@ -83,7 +83,7 @@ nav ul {
   position: absolute;
   background-color: aqua;
   left: 40px;
-  top: 40px;
+  top: 10px;
   transform: translate(20px, -20px);
   width: 50px;
   height: 50px;
@@ -109,9 +109,9 @@ nav ul {
   transform: translate(0);
 }
 
-.toggler ~ nav {
+/* .toggler ~ nav {
   transition: all 600ms ease-in-out;
-}
+} */
 
 /* Hover */
 .toggler:checked:hover + .hamburger div {
@@ -162,6 +162,27 @@ nav ul {
     position: relative;
     margin-left: 20px;
     display: inline;
+    position: relative;
+  }
+
+  nav li:after {
+    content: "";
+    background-color: dimgray;
+    width: 0%;
+    height: 0.8px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: all 0.24s linear;
+  }
+
+  nav li:hover {
+    opacity: 0.9;
+  }
+
+  nav li:hover:after {
+    width: 80%;
   }
 
   nav li ul {

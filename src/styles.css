@@ -75,6 +75,31 @@ h5 {
   font-size: 4rem;
 }
 
+.btn {
+  padding: 12px 35px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #0074d9;
+}
+
+.py-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.my-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .show-mobile {
   display: block;
 }
@@ -91,4 +116,34 @@ h5 {
   .show-desktop {
     display: block;
   }
+}
+
+/* Animations */
+
+/* Ripple Animation Start Here */
+/* create circle  */
+.anim-ripple::after {
+  content: "";
+  position: absolute;
+  background: white;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+  width: 500px;
+  height: 500px;
+}
+
+/* when button click animate */
+.anim-ripple:active:after {
+  width: 0px;
+  height: 0px;
+  opacity: 0.75;
+}
+
+/* now keep animation for 0.45s */
+.anim-ripple:not(:active)::after {
+  transition: all 450ms ease-in;
 }
