@@ -1,28 +1,41 @@
-# FirebaseShop
+<h1 align="center"> FireShop </h1>
+<p>
+  <a href="https://www.npmjs.com/package/todo" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/todo.svg">
+  </a>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+```
+A Simple shop based on firebase and Angular with pure CSS
+```
+
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Home view
+<img src="./screen_shots/hero_view.png" style="padding :20px" width="100%">
 
-## Build
+### Products list
+<img src="./screen_shots/products_view.png" style="padding :20px" width="100%">
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Autheur
 
-## Running end-to-end tests
+👤 **Addi Mohammed**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Github: [@AddiMohammedSaid](https://github.com/AddiMohammedSaid)
 
-## Further help
+- LinkedIn: [@Addi Mohammed Said](https://www.linkedin.com/in/mohammed-said-addi-7a4069167/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# firebase-shop-angular
+<br>
+<br>
+
+⭐️ Free to fork & free to talk !
+
+
+
+
