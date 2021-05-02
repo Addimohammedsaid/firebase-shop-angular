@@ -10,11 +10,25 @@ a {
 }
 
 header {
+  background-color: white;
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px;
   z-index: 2;
   position: relative;
+}
+
+.cart-link {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-link span {
+  margin-left: 5px;
+}
+
+li {
+  display: inline-block;
 }
 
 nav {
@@ -80,7 +94,7 @@ nav ul {
 }
 
 .toggler {
-  position: absolute;  
+  position: absolute;
   left: 40px;
   top: 10px;
   transform: translate(20px, -20px);
@@ -143,14 +157,15 @@ nav ul {
 
 @media screen and (min-width: 768px) {
   nav {
-    width: 100%;
     height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: transparent;
     transform: none;
-    position: relative;
+    z-index: 10;
   }
 
   nav ul {
@@ -164,7 +179,7 @@ nav ul {
     position: relative;
   }
 
-  nav li:after {
+  .menu-links li:after {
     content: "";
     background-color: #0074d9;
     width: 0%;
@@ -176,15 +191,15 @@ nav ul {
     transition: all 0.24s linear;
   }
 
-  nav li:hover a{
-    color : #0074d9 !important;
+  .menu-links li:hover a {
+    color: #0074d9 !important;
   }
 
-  nav li:hover:after {
+  .menu-links li:hover:after {
     width: 80%;
   }
 
-  nav li ul {
+  li ul {
     background-color: #e9e9e9;
     display: none;
     position: absolute;
