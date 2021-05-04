@@ -1,11 +1,7 @@
-<div class="row no-gutters">
-  <div class="col-2">
+<div class="product-quantity">  
     <button (click)="removeFromCart()" class="btn btn-secondary btn-block">
       -
     </button>
-  </div>
-  <div class="col text-center">{{ getQuantity() }} in cart</div>
-  <div class="col-2">
-    <button (click)="addToCart()" class="btn btn-secondary btn-block">+</button>
-  </div>
+  <div class="quantity-text">{{ getQuantity() }} in cart</div>  
+  <button (click)="addToCart()" class="btn btn-secondary btn-block">+</button> 
 </div>

@@ -1,3 +1,19 @@
+.cart{
+  padding : 20px 0;
+}
+
+.cart-count {
+  margin :  20px 0;
+}
+
+table {
+  text-align : center;
+  padding : 20px;
+  border: 1px solid #E9E9E9;
+  margin : 20px 0;
+}
+
+
 .thumbnail {
   width: 80px;
   height: 80px;

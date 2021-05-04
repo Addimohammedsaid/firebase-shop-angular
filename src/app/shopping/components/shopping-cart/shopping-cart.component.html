@@ -1,18 +1,15 @@
 <h1>Shopping Cart</h1>
-<div class="row col-10" *ngIf="cart$ | async as cart">
-  <p>
-    You have {{ cart.totalItemsCount }} items in your shopping cart.
-    <button (click)="clearCart()" class="btn btn-light btn-sm">
-      Clear Shopping Cart
-    </button>
+<div class="cart" *ngIf="cart$ | async as cart">
+  <p class='cart-count'>
+    You have {{ cart.totalItemsCount }} items in your shopping cart.  
   </p>
   <table class="table">
     <thead>
       <tr>
         <th></th>
-        <th>Product</th>
-        <th class="text-center" style="width: 230px;">Quantity</th>
-        <th class="text-right" style="width: 200px;">Price</th>
+        <th  style="width: 330px;">Product</th>
+        <th  style="width: 330px;">Quantity</th>
+        <th  style="width: 300px;">Price</th>
       </tr>
     </thead>
     <tbody>
@@ -30,7 +27,7 @@
           <app-product-quantity [product]="item" [shopping-cart]="cart">
           </app-product-quantity>
         </td>
-        <td class="text-right">
+        <td >
           {{ item.totalPrice | currency: "USD":"symbol" }}
         </td>
       </tr>
@@ -40,16 +37,24 @@
         <th></th>
         <th></th>
         <th></th>
-        <th class="text-right">
+        <th >
           {{ cart.totalPrice | currency: "USD":"symbol" }}
         </th>
       </tr>
     </tfoot>
   </table>
-  <a
+
+  <div class="checkout-card">    
+    <a        
     class="btn btn-primary"
     [routerLink]="['/shopping/check-out']"
     *ngIf="cart.items.length"
     >Check out</a
   >
+    <button (click)="clearCart()" class="btn">
+      Clear Shopping Cart
+    </button>    
+  </div>
+
+  
 </div>
