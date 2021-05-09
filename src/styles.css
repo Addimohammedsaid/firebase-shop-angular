@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  position: relative;
 }
 
 root {
@@ -83,6 +84,7 @@ h5 {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  text-align: center;
   text-decoration: none;
 }
 
@@ -91,11 +93,10 @@ h5 {
   background-color: #0074d9;
 }
 
-.btn-secondary {  
-  color : white;  
-  background-color: 	hsl(208, 100%, 50%);
+.btn-secondary {
+  color: white;
+  background-color: hsl(208, 100%, 50%);
 }
-
 
 .btn-gray {
   color: white;
@@ -111,7 +112,6 @@ h5 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 
 .show-mobile {
   display: block;

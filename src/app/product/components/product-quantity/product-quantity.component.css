@@ -1,6 +1,17 @@
-.product-quantity{
-    display :flex;
-    justify-content : space-around;
-    align-items : center;
-    align-self : center;    
+.product-quantity {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-self: center;
+}
+
+.btn {
+  padding: 5px 20px;
+}
+
+.btn-block {
+  color: #444444;
+  font-size: 1rem;
+  border: 1px solid #333;
+  background-color: transparent;
 }
